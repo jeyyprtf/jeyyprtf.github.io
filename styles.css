@@ -424,4 +424,8 @@ footer {
     .section {
         padding-top: 120px;
     }
+
+    .video-gallery {
+        padding: 0px;
+    }
 }
