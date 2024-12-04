@@ -69,7 +69,6 @@ nav {
 }
 
 /* Previous CSS remains the same, add these new styles */
-
 .carousel-container {
     width: 100%;
     margin-bottom: 50px;
@@ -87,19 +86,19 @@ nav {
 
 .carousel-inner {
     display: flex;
-    width: 400%;
+    width: 600%; /* Disesuaikan untuk 6 item */
     transition: transform 0.5s ease;
 }
 
 .carousel-item {
-    width: 25%;
+    width: 16.666%; /* 100% / 6 = 16.666% */
     position: relative;
 }
 
 .carousel-item img {
     width: 100%;
     height: auto;
-    aspect-ratio: 36 / 9;
+    aspect-ratio: 4 / 1;
     object-fit: cover;
 }
 
@@ -108,13 +107,19 @@ nav {
     transform: translateX(0%);
 }
 #carousel-2:checked ~ .carousel-inner {
-    transform: translateX(-25%);
+    transform: translateX(-16.666%);
 }
 #carousel-3:checked ~ .carousel-inner {
-    transform: translateX(-50%);
+    transform: translateX(-33.333%);
 }
 #carousel-4:checked ~ .carousel-inner {
-    transform: translateX(-75%);
+    transform: translateX(-50%);
+}
+#carousel-5:checked ~ .carousel-inner {
+    transform: translateX(-66.666%);
+}
+#carousel-6:checked ~ .carousel-inner {
+    transform: translateX(-83.333%);
 }
 
 .carousel-controls {
@@ -184,7 +189,7 @@ input[type="radio"]:checked + label {
     padding-top: 50px;
 }
 
-.projects h2, .info h2, .contact h2 {
+.projects h2, .about-header {
     text-align: center;
     margin-bottom: 50px;
     color: var(--lighter);
@@ -288,8 +293,8 @@ input[type="radio"]:checked + label {
 .video-card-content {
     padding-left: 5%;
     padding-bottom: 4%;
-    padding-top: 5%;
-    position: absolute;
+    padding-top: 4;
+     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
@@ -319,66 +324,15 @@ input[type="radio"]:checked + label {
     aspect-ratio: 16/9;
 }
 
-.video-overlay, .play-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    color: white;
-    font-size: 2rem;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 10px;
-    border-radius: 50%;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
-.play-btn {
-    font-size: 2rem;
-    color: #fff;
-    background: none;
-    border: none;
-    cursor: pointer;
-    outline: none;
-}
-
-/* Video Modal */
-.video-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
+.about-content {
+    display: flex;
+    gap: 70px;
     align-items: center;
-    z-index: 1000;
 }
 
-.video-modal-content {
-    position: relative;
-    width: 80%;
-    max-width: 800px;
+.about-text {
+    font-size: large;
 }
-
-#youtubeFrame {
-    width: 100%;
-    height: 450px;
-    border: none;
-}
-
-.close-modal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5rem;
-    color: #fff;
-    cursor: pointer;
-}
-
 
 .contact {
     color: var(--white);
@@ -410,6 +364,10 @@ footer {
 @media (max-width: 768px) {
     .home-content {
         flex-direction: column;
+    }
+
+    .projects {
+        padding-bottom: 20%;
     }
 
     .project-grid {
@@ -445,8 +403,28 @@ footer {
     .video-card {
         border-radius: 20px;
     }
+
+    .about-content {
+        display: contents;
+        align-items: center;
+    }
+
+    .about-photo {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        display: flex;
+        right: 6%;
+
+    }
+
+    .about-text-p1 {
+        width: 65%;
+    }
 }
 
-@media (max-width: 500px) {
-
+@media (max-width: 495px) {
+    .about-text-p1 {
+        width: 55%;
+    }
 }
