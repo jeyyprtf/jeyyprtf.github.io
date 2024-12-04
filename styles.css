@@ -51,92 +51,11 @@ nav {
     color: var(--accent-blue);
 }
 
-.mobile-nav {
-    display: none;
-}
-
-.hamburger {
-    width: 24px;
-    height: 18px;
-    position: relative;
-    cursor: pointer;
-}
-
-.hamburger .bar {
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: var(--text-light);
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all 0.3s ease;
-}
-
-.hamburger .bar::before,
-.hamburger .bar::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: var(--text-light);
-    transition: all 0.3s ease;
-}
-
-.hamburger .bar::before {
-    top: -8px;
-}
-
-.hamburger .bar::after {
-    bottom: -8px;
-}
-
-/* Mobile Menu Overlay */
-.mobile-menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--bg-dark);
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.mobile-menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.mobile-menu-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-.mobile-menu-content a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-size: 2rem;
-    margin: 20px 0;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.mobile-menu-overlay.active .mobile-menu-content a {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .section {
     min-height: 100vh;
     padding-left: 5%;
     padding-right: 5%;
-    padding-top: 0px;
+    padding-top: 70px;
     padding-bottom: 20px;
     /* display: flex;
     flex-direction: column; */
@@ -289,12 +208,13 @@ input[type="radio"]:checked + label {
     /* height: 250px; Sesuaikan tinggi sesuai kebutuhan */
     object-fit: cover;
     filter: brightness(0.8); /* Membuat gambar sedikit gelap */
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
     aspect-ratio: 3/4;
 }
 
 .project-card:hover .project-card-image {
     transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 .project-card-content {
@@ -366,6 +286,16 @@ input[type="radio"]:checked + label {
     cursor: pointer;
 }
 
+.video-card-image {
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover .video-card-image {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+
 .video-card img {
     position: absolute;
     top: 0;
@@ -374,6 +304,7 @@ input[type="radio"]:checked + label {
     height: 100%;
     object-fit: cover;
     filter: brightness(0.8);
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .video-overlay, .play-btn {
@@ -390,12 +321,6 @@ input[type="radio"]:checked + label {
     border: none;
     outline: none;
     cursor: pointer;
-}
-
-
-.video-card:hover .video-overlay {
-    opacity: 0;
-    
 }
 
 .play-btn {
@@ -494,5 +419,9 @@ footer {
 
     .carousel-item img {
         aspect-ratio: 16/9;
+    }
+
+    .section {
+        padding-top: 120px;
     }
 }
