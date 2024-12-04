@@ -43,4 +43,4 @@ function autoSwipe() {
 updateActiveLabel();
 
 // Jalankan autoSwipe setiap 5 detik
-setInterval(autoSwipe, 5000);
+setInterval(autoSwipe, 3000);

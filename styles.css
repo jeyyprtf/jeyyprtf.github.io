@@ -166,6 +166,12 @@ input[type="radio"]:checked + label {
 
 .home-text {
     flex: 1;
+    font-size: large;
+}
+
+.home-desc {
+    max-width: 70%;
+    font-size: large;
 }
 
 .home-image-headshot {
@@ -330,6 +336,10 @@ input[type="radio"]:checked + label {
     align-items: center;
 }
 
+.about-photo img {
+    max-width: 500px;
+}
+
 .about-text {
     font-size: large;
 }
@@ -391,6 +401,10 @@ footer {
         aspect-ratio: 16/9;
     }
 
+    .home-desc {
+        max-width: 100%;
+    }
+
     .section {
         padding-top: 120px;
     }
@@ -402,6 +416,14 @@ footer {
 
     .video-card {
         border-radius: 20px;
+    }
+
+    .projects {
+        /* padding-bottom: 100px; */
+    }
+
+    .about {
+        padding-top: 55px;
     }
 
     .about-content {
