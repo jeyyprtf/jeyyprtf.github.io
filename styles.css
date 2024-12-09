@@ -457,6 +457,16 @@ footer {
         border-radius: 20px;
     }
 
+    .video-card-content {
+        line-height: 1.3;
+        font-size: smaller;
+        padding: 3%;
+    }
+
+    .video-card-sub-content {
+        line-height: 1.2;
+    }
+
     .projects {
         /* padding-bottom: 100px; */
     }
@@ -477,6 +487,10 @@ footer {
         display: flex;
         right: 6%;
 
+    }
+
+    .about-text-p {
+        font-size: smaller;
     }
 
     .about-text-p1 {
